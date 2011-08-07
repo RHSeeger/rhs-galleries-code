@@ -1,0 +1,40 @@
+<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/common.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/home/index.css" />
+<script type="text/javascript" src="/javascripts/home/index.js"></script>
+
+<div class="page">
+  <div class="header ui-corner-all ui-widget">
+    <h1>TrendImages</h1>
+    <div class="description">Image galleries built from what people are interested around the web.</div>
+  </div>
+
+  <div class="body ui-corner-all">
+    <div class="breadcrumb ui-corner-all">
+      <ul>
+	<li class="first ui-corner-all">Main</li>
+      </ul>
+    </div>
+    <div class="content ui-helper-clearfix">
+      
+      <div class="lhs">
+	<div class="images">
+          <% @galleries.each_with_index do |gallery,index| %>
+          <div class="image image<%= index %>">
+            <a href="/gallery/<%= gallery.search %>">
+	      <img src="<%= gallery.images[0].url(:original) %>"/>
+            </a>
+            <div class="searchterm"><%=h gallery.search %></div>
+	  </div>
+          <% end %>
+	</div>
+      </div>
+      <div class="rhs">
+	<img src="https://www.google.com/adsense/static/en_US/images/160x600.gif" alt="Wide Skyscraper" border="0" height="600" width="160">
+      </div>
+    </div>
+  </div>
+
+  <div class="footer ui-corner-all">
+    This is the footer
+  </div>
+</div>

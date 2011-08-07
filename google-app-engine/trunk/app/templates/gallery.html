@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}TrendImages : Gallery : {{gallery.search_term|escape}}{% endblock %}
+{% block meta_description %}Image galleries built from the search trending topic trend {{gallery.search_term|escape}} from Twitter using Flickr photo search{% endblock %}
+{% block meta_keywords %}{{gallery.search_term|escape}}{% endblock %}
+
+{% block page_css %}
+    <link rel="stylesheet" type="text/css" media="all" href="/css/gallery.css" />
+{% endblock %}
+{% block page_js %}
+    <script type="text/javascript" src="/js/gallery.js"></script>
+    <script src="/galleria/galleria-1.2.5.min.js"></script>
+<script>
+var image_data = [
+    {% for photo in gallery.photos %}
+    {
+        image: '{{photo.getUrls.original}}',
+        thumb: '{{photo.getUrls.thumbnail}}',
+        title: '{{photo.title|force_escape|escapejs}}',
+        description: '{{photo.description|striptags|linebreaks|escapejs}}',
+        user: '{{photo.flickrOwnerId|escapejs}}',
+        owner: '{{photo.flickrOwnerDisplayName|force_escape|escapejs}}',
+        linkback: '{{photo.getLinkbackUrl}}'
+    },
+    {% endfor %}
+];
+</script>{% endblock %}
+{% block page_facebook_image %}
+    {% for photo in gallery.photos %}
+	<meta property="og:image" content="{{photo.getUrls.small}}"/>{% endfor %}
+{% endblock %}
+
+{% block breadcrumb %}
+    <li class="first ui-corner-all"><a href="/">Main</a></li>
+    <li class="ui-corner-all">Gallery : {{gallery.search_term|escape}}</li>
+{% endblock %}
+
+{% block content %}
+                <div id="gallery"></div>
+                {% include 'include/sharing.html' %}
+                <div id="imagedata">
+                    <div class="title"></div> 
+                    <div class="user">by <span class="username"></span></div>
+                    <div class="description"></div>
+                </div>
+				
+				<div class="photo-info">
+					The list of photos used on this page, should javascript be disabled
+					<dl>
+        			{% for photo in gallery.photos %}
+					   <dt><a href="{{photo.getUrls.original}}">{{ photo.title|escape }}</a></dt>
+					   <dd>{{ photo.description|escape }}</dd>
+					{% endfor %}
+					</dl>
+				</div>
+				
+
+{% endblock %}

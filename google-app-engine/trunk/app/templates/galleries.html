@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}TrendImages : Galleries starting with {{starts_with|escape}}{% endblock %}
+{% block meta_description %}Image galleries built from the search trending topics starting with {{starts_with|escape}} from Twitter using Flickr photo search{% endblock %}
+
+{% block breadcrumb %}
+    <li class="first ui-corner-all"><a href="/">Main</a></li>
+    <li class="ui-corner-all">Galleries starting with: {{starts_with|escape}}</li>
+{% endblock %}
+
+
+{% block content %}
+<ul class="index">
+    <li><a href="/galleries/a">a</a></li>
+    <li><a href="/galleries/b">b</a></li>
+    <li><a href="/galleries/c">c</a></li>
+    <li><a href="/galleries/d">d</a></li>
+    <li><a href="/galleries/e">e</a></li>
+    <li><a href="/galleries/f">f</a></li>
+    <li><a href="/galleries/g">g</a></li>
+    <li><a href="/galleries/h">h</a></li>
+    <li><a href="/galleries/i">i</a></li>
+    <li><a href="/galleries/j">j</a></li>
+    <li><a href="/galleries/k">k</a></li>
+    <li><a href="/galleries/l">l</a></li>
+    <li><a href="/galleries/m">m</a></li>
+    <li><a href="/galleries/n">n</a></li>
+    <li><a href="/galleries/o">o</a></li>
+    <li><a href="/galleries/p">p</a></li>
+    <li><a href="/galleries/q">q</a></li>
+    <li><a href="/galleries/r">r</a></li>
+    <li><a href="/galleries/s">s</a></li>
+    <li><a href="/galleries/t">t</a></li>
+    <li><a href="/galleries/u">u</a></li>
+    <li><a href="/galleries/v">v</a></li>
+    <li><a href="/galleries/w">w</a></li>
+    <li><a href="/galleries/x">x</a></li>
+    <li><a href="/galleries/y">y</a></li>
+    <li><a href="/galleries/z">z</a></li>
+    <li class="last"><a href="/galleries/other">other</a></li>
+</ul>
+<ul>
+    {% for gallery in galleries %}
+    <li><a href="/gallery/{{gallery.search_term|escape}}">{{gallery.search_term|escape}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

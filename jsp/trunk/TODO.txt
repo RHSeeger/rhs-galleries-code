@@ -1,0 +1,10 @@
+Things to do:
+* Go through code and handle TODO notes there
+* Convert flickr ingestion to threaded so we can get all galleries at once
+* Add timestamp to galleries
+** Add task to remove old (>24 hours?) galleries from data
+* Add ability to look at old galleries, ui element for this?
+* Remove the OSIV configuration, we're not using it
+* Add sample photo to galleries so that we don't need to pull down all photos just for main page
+* Go through and figure out where we should actually be closing sessions, so we don't leak them
+* See if we can convert in memory db to disk based

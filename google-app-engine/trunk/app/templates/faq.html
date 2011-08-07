@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}TrendImages : Frequently Asked Questions{% endblock %}
+
+{% block page_css %}{% endblock %}
+{% block page_js %}{% endblock %}
+
+{% block breadcrumb %}
+    <li class="first ui-corner-all"><a href="/">Main</a></li>
+    <li class="ui-corner-all">Frequently Asked Questions</li>
+{% endblock %}
+
+{% block content %}
+                <dl>
+                    <dt>What is this site?</dt>
+                    <dd>The brief description is that it's a site that grabs "topics that people are interested in" and
+                    creates photo galleries based on them. Currently it gets it's topics from the
+                    <a href='http://apiwiki.twitter.com/w/page/22554679/Twitter-API-Documentation'>Twitter API</a>
+                    and then searches for photos related to those topics using the 
+                    <a href='http://www.flickr.com/services/api/'>Flickr API</a>.</dd>
+
+                    <dt>The site seems pretty simple, why bother creating it?</dt>
+                    <dd>I'm a big fan of learning new things within the field of software development. As such, I
+                    enjoy picking languages, frameworks, and the like and building a project using them to get a feel
+                    for how they work. This project was the result of combined desire to learn about Python and
+                    one of the <a href="http://en.wikipedia.org/wiki/Platform_as_a_service">Platform as a Service</a> 
+                    platforms that exists.</dd>
+
+                    <dt>There's something I'd like to compain about, or see changed. How can I contact you?</dt>
+                    <dd>The best way to let me know about a problem/suggestion related to the site would be through 
+                    the support page for it on <a href='https://sourceforge.net/projects/rhs-galleries/support'>Sourceforge</a>
+                    </dd>
+
+                    <dt>I see the source for the site is available on Sourceforge....</dt>
+                    <dd>Indeed. This site, including it's current implementation and ones using other languages/frameworks
+                    are available via <a href="https://sourceforge.net/projects/rhs-galleries/">Sourceforge</a>. Building 
+                    it is a learning experience for me and making it available so others can use it to that same
+                    purpose seemed like a good idea.</dd>
+                    
+                    <dt>Why can't I put in my own search term and have a gallery displayed for it?</dt>
+                    <dd>Each time a gallery is ingested into the system, it requires a call to the Flickr API. Calls
+                    to that API are rate limited based on the app key used. I can't allow an unconstrained number of
+                    hits against the API without risk of impacting the normal operation of the site, especially since
+                    going over the rate disables the key permanantly.</dd>
+
+                    <dt>Why can't I search the existing galleries to see if there's one I'm interested in?</dt>
+                    <dd>Google App Engine doesn't have a real search engine (ie, SOLR/Lucene, etc) built in. It might
+                    be possible to build a search engine using what is available, but it will require more work than
+                    I can spare at the moment.</dd>
+
+                    <dt>Why can't we rate galleries so that the more interesting ones stay in the system longer?</dt>
+                    <dd>It's in the plan of things to do, actually. However, the ability to keep ratings on things
+                    requires database operations at rate that could surpass what Google App Engine allows. There is a
+                    way to make it work, but I haven't had time to look into it yet.</dd>
+                </dl>{% endblock %}
+
+

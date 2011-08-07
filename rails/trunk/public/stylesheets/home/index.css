@@ -1,0 +1,86 @@
+
+div.image0 {
+    float: left;
+    width: 410px;
+    height: 310px;
+    margin: 10px 5px 5px 10px;
+    padding: 0 0 0 0;
+}
+div.image0 img {
+    position: relative;
+}
+div.image0 div.searchterm {
+
+}
+div.image1, div.image2, div.image3, div.image4, div.image5 {
+    float: left;
+    width: 200px;
+    height: 150px;
+    padding: 0 0 0 0;
+}
+div.image1 {
+    margin: 10px 10px 5px 5px;
+}
+div.image2 {
+    margin: 5px 10px 5px 5px;
+}
+div.image3 {
+    margin: 5px 5px 10px 10px;
+}
+div.image4 {
+    margin: 5px 5px 10px 5px;
+}
+div.image5 {
+    margin: 5px 10px 10px 5px;
+}
+div.images {
+    /* float: left; */
+    width: 640px;
+    height: 490px;
+    clear: both;
+    margin: 10;
+    padding: 0 0 0 0;
+    border: solid black 1px;
+}
+img {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    text-decoration: none;
+}
+a, a:visited, a:focus, a:active, a:hover, a:link, a:visited {
+    color: #000000;
+    border: 0;
+    text-decoration: none;
+    background-color: white;
+}
+div.searchterm {
+    opacity: 0;
+    background-color: black;
+    width: 100%;
+    height: 30px;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    position: relative;
+    top: -35px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-style: italic;
+    font-variant: small-caps;
+    font-family: "Verdana"; /* this is the default, putting it in here in case we want to change it */
+}
+div.image0 div.searchterm {
+    font-size: larger;
+}
+
+div.loading {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 490px;
+}

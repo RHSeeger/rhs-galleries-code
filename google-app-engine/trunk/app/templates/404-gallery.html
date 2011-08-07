@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}TrendPhotos : Galleries : Page Not Found{% endblock %}
+
+{% block page_css %}{% endblock %}
+{% block page_js %}{% endblock %}
+
+{% block breadcrumb %}
+    <li class="first ui-corner-all"><a href="/">Main</a></li>
+    <li class="ui-corner-all">Gallery not found</li>
+{% endblock %}
+
+{% block content %}
+                <p>The gallery you were looking for "<i><code>{{search_term}}</code></i>" was not found.</p>
+                <p>Please go back to the <a href="/">main page</a> and navigate from there</p>
+{% endblock %}

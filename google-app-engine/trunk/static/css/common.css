@@ -1,0 +1,257 @@
+
+body {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size:   13px;
+    line-height: 18px;
+    background: #888888;
+	color: #000000;
+}
+div.page .header {
+    background: #EEEEEE;
+}
+div.page .body {
+    background: #CCCCCC;
+}
+div.page .footer {
+    background: #EEEEEE;
+}
+
+div.page {
+    width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+div.page .header h1 {
+    margin: 5px 5px 10px 5px;
+    /* color: rgb(25, 101, 66); */
+}
+div.page .header h2 {
+    font-size: 1.1em;
+    font-weight: normal;
+    padding: 0 0 0 0;
+	margin: 5px 5px 0 5px;
+    font-style: italic;
+}
+div.page .header h2.description {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+div.page .header h2.subdescription {
+    font-style: italic;
+}
+
+div.page .body, div.page .header, div.page .footer {
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+div.page .content .rhs {
+    float: right;
+	width: 160px;
+}
+div.page .content .lhs {
+    float: left;
+	width: 640px;
+}
+div.clear {
+    clear: both;
+}
+
+/* the breadcrumb trail */
+div.breadcrumb {
+    background-color: #DDDDDD;
+    padding: 3px 8px 3px 8px;
+    margin-bottom: 25px;
+}
+
+div.breadcrumb ul {
+    margin-left: 0;
+    padding-left: 0px;
+    display: inline;
+    border: none;
+} 
+
+div.breadcrumb ul li {
+    font-weight: bold;
+	font-size: 1.2em;
+    margin-left: 0;
+    paddin-left: 2px;
+    /* padding: 2px 5px 2px 5px; */
+    border: none;
+    list-style: none;
+    display: inline;
+}
+div.breadcrumb ul li a {
+    text-decoration: none;
+}
+div.breadcrumb ul li:before {
+    content: "\0020 \0020 \0020 \00BB \0020";
+}
+div.breadcrumb ul li.first:before {
+    content: " ";
+}
+
+/* breadcrumb / share*/
+div.breadcrumb div.random {
+    float: right;
+}
+div.breadcrumb div.random a {
+    font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+/* Sharing */
+.sharing {
+	background-color: #DDDDDD;
+    margin: 3px 0 3px 0;
+	padding: 3px 5px 3px 5px;
+}
+.addthis_button_facebook_like { width: 80px; height:18px; overflow:hidden; }
+.share .addthis_toolbox {
+    height: 20px;
+}
+.sharing .share {
+	float: right;
+    height: 20px;
+}
+.sharing .like {
+	float: left;
+    height: 20px;
+}
+/* Footer */
+div.footer ul {
+    display: inline;
+    margin: 0;
+    padding: 0 5px;
+}
+div.footer li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+div.footer ul li:after {
+    content: " | ";
+}
+        
+div.footer ul li.last:after {
+    content: "";
+}
+div.footer div.copyright {
+	float: right;
+	padding-right: 5px;
+}
+div.footer div.links {
+    float: left;
+}
+
+/* About page */
+body.about .content p {
+	margin: 0 0 13px 5px;
+}
+
+/* FAQ page */
+body.faq dt {
+	font-weight: bold;
+}
+body.faq dl {
+	margin-top: 0px;
+	margin-left: 5px;
+}
+
+/* About page */
+body.privacy .content p {
+    margin: 0 0 13px 5px;
+}
+
+/* Galleries page */
+body.galleries ul.index {
+    display: inline;
+    margin: 0;
+    padding: 0 5px;
+}
+body.galleries ul.index li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+body.galleries ul.index li:after {
+    content: " | ";
+}
+        
+body.galleries ul.index li.last:after {
+    content: "";
+}
+
+/* Gallery Navigation */
+div.gallery-navigation {
+    background-color: #DDDDDD;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+	
+    font-family: verdana, arial, helvetica, sans-serif;
+    color: #000000;
+    font-size: 1.2em;
+
+}
+div.gallery-navigation .index {
+    width: 30%;
+	float: left;
+}
+div.gallery-navigation .heading {
+	width: 40%;
+}
+div.gallery-navigation .random {
+    width: 30;
+	float: right;
+}
+
+/* Other Links */
+div.other-links {
+    background-color: #FFFFFF;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+    font-family: verdana, arial, helvetica, sans-serif;
+    color: #000000;
+    text-align: center;
+}
+div.other-links h3 {
+	padding: 0;
+	margin: 0;
+}
+div.other-links div.links ul {
+    margin-left: 0;
+    padding-left: 5px;
+    display: inline;
+    border: none;
+} 
+
+div.other-links div.links ul li {
+    margin-left: 0;
+    paddin-left: 2px;
+    /* padding: 2px 5px 2px 5px; */
+    border: none;
+    list-style: none;
+    display: inline;
+}
+
+div.other-links div.links li:before {
+    content: " | ";
+}
+div.other-links div.links li.first:before {
+    content: " ";
+}

@@ -1,0 +1,8 @@
+cron:
+- description: gallery update
+  url: /tasks/ingest
+  schedule: every 30 minutes
+- description: purge old galleries
+  url: /tasks/purge
+  schedule: every 1 hours
+

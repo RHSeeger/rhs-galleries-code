@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<beans xmlns="http://www.springframework.org/schema/beans" 
+	       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		   xmlns:context="http://www.springframework.org/schema/context"
+		   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	
+	<context:component-scan base-package="com.rhseeger.controllers"/>
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+	    <property name="prefix" value="/"/>
+	    <property name="suffix" value=".jsp"/>
+	</bean>
+	
+	<bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	    <property name="driverClassName" value="org.h2.Driver"/>
+	    <property name="url" value="jdbc:h2:mem:db1;DB_CLOSE_DELAY=-1;MVCC=TRUE"/>
+	    <property name="username" value="sa"/>
+	    <property name="password" value=""/>
+	</bean>
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource" ref="myDataSource"/>
+		<property name="annotatedClasses">
+		    <list>
+                <!-- value>com.rhseeger.models.Brand</value -->
+                <!-- value>com.rhseeger.models.Car</value -->
+                <value>com.rhseeger.models.TopicList</value>
+                <value>com.rhseeger.models.Gallery</value>
+                <value>com.rhseeger.models.Photo</value>
+		    </list>
+		</property>
+		<property name="hibernateProperties">
+		    <props>
+		        <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+		        <prop key="hibernate.show_sql">true</prop>
+		        <prop key="hibernate.hbm2ddl.auto">create</prop>
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+                <prop key="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</prop>
+		    </props>
+		</property>
+	</bean>
+	
+    <bean id="openSessionInViewInterceptor" class="org.springframework.orm.hibernate3.support.OpenSessionInViewInterceptor">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory" />
+        </property>
+        <property name="singleSession" value="true"/>
+        <property name="flushModeName">
+            <value>FLUSH_AUTO</value>
+        </property>
+    </bean> 
+
+
+	<bean id="myTopicListDAO" class="com.rhseeger.services.TopicListManager">
+	    <property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+    <bean id="myGalleryDAO" class="com.rhseeger.services.GalleryManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+	
+	<bean name="/index.html" class="com.rhseeger.controllers.MainController">
+        <property name="topicListManager" ref="myTopicListDAO"/>
+        <property name="galleryManager" ref="myGalleryDAO"/>
+    </bean>
+    <bean name="/" class="com.rhseeger.controllers.MainController">
+        <property name="topicListManager" ref="myTopicListDAO"/>
+        <property name="galleryManager" ref="myGalleryDAO"/>
+    </bean>
+
+
+<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+    <property name="sessionFactory" ref="sessionFactory" />
+</bean>
+
+<bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+    <property name="transactionManager" ref="txManager"/>
+</bean>
+</beans>

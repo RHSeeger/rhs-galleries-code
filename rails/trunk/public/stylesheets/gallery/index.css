@@ -1,0 +1,14 @@
+#imagedata .title {
+    font-weight: bold;
+    display: inline;
+}
+#imagedata .user {
+    font-style: italic;
+    display: inline;
+}
+#imagedata .description {
+    display: block;
+}
+#imagedata {
+    width: 640px;
+}

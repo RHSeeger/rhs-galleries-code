@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}TrendImages : About{% endblock %}
+
+{% block page_css %}{% endblock %}
+{% block page_js %}{% endblock %}
+
+{% block breadcrumb %}
+    <li class="first ui-corner-all"><a href="/">Main</a></li>
+    <li class="ui-corner-all">About TrendImages</li>
+{% endblock %}
+
+{% block content %}
+<p>TrendImages is a simple mashup site, taking interesting terms (currently gathered via the Twitter API) and 
+creating galleries of images (from the Flickr API) using them. It loads the list of current trending search
+terms every "period of time" and creates galleries from them. </p>
+
+<p>The purpose of the site was to give the author (Robert Seeger) a chance to learn (more) about 
+Python and development on a PaaS environment (Google App Engine). Along the way, I managed to pick
+up some knowledge about the Django platform, which was also nice.</p>
+
+<p>The code for this site (and partial implementations using other languages/platforms) can be found on 
+<a href="https://sourceforge.net/projects/rhs-galleries/">Sourceforge</a>, as can some of my other projects.
+In order to learn platforms/languages, I have a habit of implementing something using it. For a language,
+that tends to be a quick little program that solves a game. For web frameworks, I implement this site. Recently,
+I decided to start putting this work on Sourceforge for a couple of reasons:
+<ul>
+    <li>A non-local place to keep my work</li>
+    <li>Allow others to use it (in some way) as something to learn from. While I may do some things wrong with 
+	my code/design, its not a bad example of a simple project implemented using the technology in question. </li>
+    <li>While looking for a job, there's always cases of interviewers asking <i>"Do you have any code I can look at?</i>
+	This is one way to provide it.</li>
+</ul>
+
+<p>If you have any other questions, they might be answered in the <a href="/faq">FAQ</a>. If not, there's a link on that
+page to the recommended support page on Sourceforge.</p>
+
+{% endblock %}

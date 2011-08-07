@@ -1,0 +1,8 @@
+Things to do:
+* Go through code and handle any TODO notes there
+* See if we can use memcache to cache the data for galleries for a period of time 
+  even 1 minute would probably be good
+* add a favicon
+* Update the color scheme... it's ugly
+** What this is, where it's info comes from, link to sourceforge, who I am
+* Add actual google ads

@@ -1,0 +1,138 @@
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+
+/*
+ * MY STUFF
+ */
+body {
+    background: #FFc293;
+}
+
+div.page {
+    width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+div.page .header {
+    background: rgb(139, 220, 183);
+}
+div.page .body {
+    background: rgb(149, 240, 193);
+}
+div.page .footer {
+    background: rgb(139, 220, 183);
+}
+
+div.page .header h1 {
+    margin: 5px 0 5px 0;
+    color: rgb(25, 101, 66);
+}
+div.page .header .description {
+    font-style: italic;
+}
+
+div.page .body, div.page .header, div.page .footer {
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+div.page .content .rhs {
+    float: right
+}
+div.page .content .lhs {
+    float: left
+}
+div.clear {
+    clear: both;
+}
+
+/* the breadcrumb trail */
+div.breadcrumb {
+    color: rgb(25, 101, 66);
+    background-color: rgb(139, 220, 183);
+    padding: 3px;
+    margin-bottom: 25px;
+}
+
+div.breadcrumb ul {
+    margin-left: 0;
+    padding-left: 5px;
+    display: inline;
+    border: none;
+} 
+
+div.breadcrumb ul li {
+    font-weight: bold;
+    margin-left: 0;
+    paddin-left: 2px;
+    /* padding: 2px 5px 2px 5px; */
+    border: none;
+    list-style: none;
+    display: inline;
+}
+
+div.breadcrumb ul li:before {
+    content: "\0020 \0020 \0020 \00BB \0020";
+}
+div.breadcrumb ul li.first:before {
+    content: " ";
+}

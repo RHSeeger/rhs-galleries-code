@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}No title specified{% endblock %}</title>
+    <META NAME="DESCRIPTION" CONTENT="{% block meta_description %}Image galleries built from what people are interested around the web, using trending topics from Twitter and Flickr photo search.{% endblock %}">
+    <META NAME="KEYWORDS" CONTENT="{% block meta_keywords %}{% endblock %} photo image gallery galleries search topic trends Twitter Flickr mashup">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link type="text/css" href="/jqueryui/css/sunny/jquery-ui-1.8.10.custom.css" rel="Stylesheet" />  
+    <link rel="stylesheet" type="text/css" media="all" href="/css/common.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script src="/jqueryui/js/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="/js/common.js"></script>
+    {% block page_css %}<!-- No page specific css -->{% endblock %}
+    {% block page_js %}<!-- No page specific javascript -->{% endblock %}
+	{% block page_facebook_image %}<!-- no page specific facebook images -->{% endblock %}
+	<script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-23898692-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+
+{% if page %}
+    <body class="{{ page }}">
+{% else %}
+    <body>
+{% endif %}
+
+<div class="page">
+    <div class="header ui-corner-all ui-widget">
+        <h1>TrendImages</h1>
+        <h2 class="description">
+        	Photos of what people are interested around the web.
+		</h2>
+		<h2 class="subdescription">
+			Image galleries built from the results of a Flickr photo search using trending topics from Twitter.
+		</h2>
+    </div>
+
+    <div class="body ui-corner-all ui-widget">
+        <div class="breadcrumb ui-corner-all ui-helper-clearfix">
+            <ul>
+            	{% block breadcrumb %}<!-- No breadcrumb specified -->{% endblock %}
+            </ul>
+			<!-- sharing was here -->
+            <div class="random">
+                <a class="random-gallery" href="/randomgallery">See Random Gallery &rArr;</a>
+            </div>
+        </div>
+        <div class="content ui-helper-clearfix">
+            <div class="rhs">
+				<script type="text/javascript"><!--
+				google_ad_client = "ca-pub-1125567153031894";
+				/* RHS Galleries Right Rail */
+				google_ad_slot = "4166211812";
+				google_ad_width = 160;
+				google_ad_height = 600;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+            </div>
+            <div class="lhs">
+                {% block content %}Content{% endblock %}
+            </div>
+
+        </div>
+    </div>
+
+    <div class="gallery-navigation ui-corner-all ui-helper-clearfix">
+        <span class="index">
+           <a href="/galleries/a">Full Index</a>
+        </span>
+        <span class="heading">&lt;&lt; See More Galleries &gt;&gt;</span>
+        <span class="random">
+           <a class="random-gallery" href="/randomgallery">Random Gallery</a>
+        </span>
+    </div>
+
+    <div class="footer ui-corner-all ui-helper-clearfix">
+    	<div class="links">
+	        <ul>
+	            <li><a href="/about">About</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li class="last"><a href="/privacy">Privacy</a></li>
+	        </ul>
+		</div>
+		<div class="copyright">
+			Copyright &#169; 2011-{% now "Y" %}, Robert Seeger
+		</div>
+    </div>
+	
+	<div class="other-links ui-corner-all ui-helper-clearfix">
+		<h3>Other Links</h3>
+        <div class="links">
+            <ul>
+                <li class="first"><a href="http://www.flickr.com/">Flickr</a></li>
+                <li><a href="http://www.flickr.com/services/api/">Flickr API</a></li>
+                <li><a href="http://twitter.com/">Twitter</a></li>
+                <li><a href="https://dev.twitter.com/docs">Twitter API</a></li>
+                <li><a href="http://www.python.org/">Python</a></li>
+                <li><a href="http://www.google.com/enterprise/appengine">Google App Engine</a></li>
+                <li><a href="http://code.google.com/appengine/docs/python/gettingstarted/">GAE Python API</a></li>
+                <li><a href="http://www.programmableweb.com/mashup/trendimages">Programmable Web</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+// A custom "onReady" function for AddToAny
+function my_addtoany_onready() {
+    a2a_config.target = '.share-this';
+    a2a.init('page');
+}
+
+// Setup AddToAny "onReady" callback
+var a2a_config = a2a_config || {};
+a2a_config.tracking_callback = {
+    ready: my_addtoany_onready
+};
+// Additional a2a_config properties may go here
+
+// Load AddToAny script asynchronously
+(function(){
+    var a = document.createElement('script');
+    a.type = 'text/javascript';
+    a.async = true;
+    a.src = 'http://static.addtoany.com/menu/page.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(a, s);
+})();
+</script>
+
+</body>
+</html>
+

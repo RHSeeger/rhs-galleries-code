@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}TrendPhotos : Page Not Found{% endblock %}
+
+{% block page_css %}{% endblock %}
+{% block page_js %}{% endblock %}
+
+{% block breadcrumb %}
+    <li class="first ui-corner-all"><a href="/">Main</a></li>
+    <li class="ui-corner-all">Page not found</li>
+{% endblock %}
+
+{% block content %}
+                <p>Sadly, the page you were looking for (<code>{{url}}</code>) was not found.</p>
+                <p>Please go back to the <a href="/">main page</a> and navigate from there</p>
+{% endblock %}
+
+

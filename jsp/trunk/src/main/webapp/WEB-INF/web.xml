@@ -1,0 +1,68 @@
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" version="2.4"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http:/java.sun.com/dtd/web-app_2_3.dtd">
+    <display-name>Archetype Created Web Application</display-name>
+
+	<filter>
+		<filter-name>hibernateFilter</filter-name> 
+		<filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>hibernateFilter</filter-name>
+		<url-pattern>*.html</url-pattern>
+	</filter-mapping>
+  
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/css/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/javascript/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/jqueryui/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/galleria/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <context-param > 
+        <param-name>IngestionDelayInMinutes</param-name> 
+        <param-value >60</param-value> 
+    </context-param>
+	<context-param>
+		<param-name>FlickrKey</param-name>
+		<param-value>1cbf08d9a5065e7c1496afff9fa4b896</param-value>
+	</context-param>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/springmvc-servlet.xml</param-value>
+    </context-param>
+
+    <listener>
+	   <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+	 
+
+    <listener>
+        <listener-class>
+            com.rhseeger.ingester.ImageIngesterContextListener
+        </listener-class>
+    </listener>
+
+</web-app>

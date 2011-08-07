@@ -1,0 +1,53 @@
+<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/gallery/index.css" />
+<script src="/galleria/galleria-1.2.2.min.js"></script>
+<script type="text/javascript" src="/javascripts/gallery/index.js"></script>
+
+<script>
+var image_data = [
+	<% @gallery.images.each do |image| %>
+    {
+        image: '<%= raw escape_javascript(image.url(:original)) %>',
+        thumb: '<%= raw escape_javascript(image.url(:thumbnail)) %>',
+        title: '<%= raw escape_javascript(image.title) %>',
+        description: '<%= raw escape_javascript(image.description) %>',
+        caption: '<%= raw escape_javascript(image.caption) %>',
+        user: '<%= raw escape_javascript(image.user) %>',
+        linkback: '<%= raw escape_javascript(image.linkbackUrl) %>'
+    },
+	<% end %>
+];
+
+</script>
+
+<div class="page">
+	<div class="header ui-corner-all ui-widget">
+		<h1>TrendImages</h1>
+		<div class="description">Image galleries built from what people are interested around the web.</div>
+	</div>
+
+	<div class="body ui-corner-all">
+		<div class="breadcrumb ui-corner-all">
+			<ul>
+				<li class="first ui-corner-all"><a href="/">Main</a></li>
+				<li class="ui-corner-all"><%=h params[:searchterm] %></li>
+			</ul>
+		</div>
+		<div class="content ui-helper-clearfix">
+			<div class="lhs">
+				<div id="gallery"></div>
+				<div id="imagedata">
+					<div class="title"></div> 
+					<div class="user">by <span class="username"></span></div>
+					<div class="description"></div>
+				</div>
+			</div>
+			<div class="rhs">
+				<img src="https://www.google.com/adsense/static/en_US/images/160x600.gif" alt="Wide Skyscraper" border="0" height="600" width="160">
+			</div>
+		</div>
+	</div>
+
+	<div class="footer ui-corner-all">
+		This is the footer
+	</div>
+</div>

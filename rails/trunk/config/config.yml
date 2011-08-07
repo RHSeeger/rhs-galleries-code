@@ -1,0 +1,4 @@
+development:
+ flickr_key: 1cbf08d9a5065e7c1496afff9fa4b896
+ topics_age: 300
+production:

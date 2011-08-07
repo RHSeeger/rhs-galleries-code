@@ -1,0 +1,24 @@
+#imagedata .title {
+    font-weight: bold;
+    display: inline;
+}
+#imagedata .user {
+    font-style: italic;
+    display: inline;
+}
+#imagedata .description {
+    display: block;
+}
+#imagedata {
+    width: 640px;
+}
+#imagedata {
+	padding: 0 3px 0 3px;
+}
+.galleria-container {
+	background: #CCC;
+}
+.galleria-image-nav-right {
+	opacity: .7;
+    filter: alpha(opacity=70);
+}

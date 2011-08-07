@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}TrendImages{% endblock %}
+
+{% block page_css %}
+    <link rel="stylesheet" type="text/css" media="all" href="/css/home.css" />
+{% endblock %}
+{% block page_js %}
+    <script type="text/javascript" src="/js/home.js"></script>
+{% endblock %}
+
+{% block page_facebook_image %}
+    {% for gallery in galleries %}
+    <meta property="og:image" content="{{gallery.sample_photo_url}}"/>{% endfor %}
+{% endblock %}
+
+{% block breadcrumb %}
+    <li class="first ui-corner-all">Main</li>
+{% endblock %}
+
+{% block content %}
+                <div class="images">
+                    {% for gallery in galleries %}
+                        <div class="image image{{forloop.counter0}}">
+                            <a href="/gallery/{{gallery.search_term|escape}}">
+                                {% if gallery.sample_photo_aspect_ratio %}
+                                    <!-- aspect ratio: {{ gallery.sample_photo_aspect_ratio }} -->
+                                {% else %}
+                                    <!-- no aspect ratio -->
+                                {% endif %}
+                                <img 
+								    {% if gallery.sample_photo_aspect_ratio %}
+									   {% if gallery.sample_photo_aspect_ratio > 4.33333333 %}
+									       width='100%'
+									   {% else %}
+										   height='100%'
+									   {% endif %}
+									{% else %}
+									   width='100%' height='100%'        
+									{% endif %}
+								src="{{gallery.sample_photo_url}}"/>
+                            </a>
+                            <div class="searchterm">{{gallery.search_term|escape}}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+				{% include 'include/sharing.html' %}
+                <div class="other-galleries ui-widget">
+                    <h2>Older Galleries</h2>
+                    <!-- we're going to want to sort by alpha and then weight (tag cloud) by when it's from -->
+                    <!-- once we have some sort of popularity (rating) for galleries, sort by time, weight by rating -->
+                    <div class="tags">
+                        <ul>
+                        {% for gallery in other_galleries %}
+                           <li class="tag{{gallery.weight}}">
+                               <a href="/gallery/{{gallery.search_term|escape}}">{{gallery.search_term|escape}}</a>
+                           </li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+{% endblock %}
